@@ -3,84 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kayıt ve Giriş Ekranı</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-container {
-            display: none;
-        }
-        .form-container.active {
-            display: block;
-        }
-        .form-container h1 {
-            margin-bottom: 20px;
-        }
-        .form-container input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007BFF;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-container button:hover {
-            background-color: #0056b3;
-        }
-        .toggle-button {
-            margin-top: 10px;
-            text-align: center;
-            cursor: pointer;
-            color: #007BFF;
-        }
-    </style>
+    <title>Kayıt ve Giriş Formu</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="form-container sign-up-container active">
-            <h1>Hesap Oluştur</h1>
-            <input type="text" placeholder="Kullanıcı Adı" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Şifre" />
-            <button>Kayıt Ol</button>
-            <div class="toggle-button" onclick="toggleForms()">Zaten bir hesabınız var mı? Giriş Yapın</div>
-        </div>
-        <div class="form-container sign-in-container">
-            <h1>Giriş Yap</h1>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Şifre" />
-            <button>Giriş Yap</button>
-            <div class="toggle-button" onclick="toggleForms()">Hesabınız yok mu? Kayıt Olun</div>
-        </div>
+        <h2>Kayıt Ol</h2>
+        <form id="signup-form">
+            <div class="input-group">
+                <label for="signup-username">Kullanıcı Adı</label>
+                <input type="text" id="signup-username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="signup-password">Şifre</label>
+                <input type="password" id="signup-password" name="password" required>
+            </div>
+            <button type="button" onclick="signup()">Kayıt Ol</button>
+        </form>
+
+        <h2>Giriş Yap</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="login-username">Kullanıcı Adı</label>
+                <input type="text" id="login-username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="login-password">Şifre</label>
+                <input type="password" id="login-password" name="password" required>
+            </div>
+            <button type="button" onclick="login()">Giriş Yap</button>
+        </form>
     </div>
 
-    <script>
-        function toggleForms() {
-            document.querySelector('.sign-up-container').classList.toggle('active');
-            document.querySelector('.sign-in-container').classList.toggle('active');
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
-  </html>
-  
+</html>
